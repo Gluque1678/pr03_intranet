@@ -26,7 +26,7 @@ if(!isset($_SESSION['sUser'])){
 }
 
 //conexión a la base de datos o mensaje en caso de error
-$conexion = mysqli_connect('localhost','root','','bd_pr02_intranet') or die ('No se ha podido conectar'. mysql_error());
+$conexion = mysqli_connect('localhost','root','','bd_pr03_intranet') or die ('No se ha podido conectar'. mysql_error());
 
 //Sentencia para mostrar todos los materiales de la tabla tbl_material
 $sql = "SELECT tbl_material.id_material, tbl_tipo_material.tipo, tbl_material.descripcion, tbl_material.disponible, tbl_material.incidencia, tbl_material.descripcion_incidencia
@@ -51,10 +51,15 @@ if(isset($_REQUEST['opciones'])){
       <meta lang="es">
       <meta charset="utf-8">
       <meta name="author" content="Felipe, Xavi, Germán">
-      <meta name="description" content="Proyecto2_intranet">
+      <meta name="description" content="Proyecto3_intranet">
       <link rel="icon" type="image/png" href="img/icon.png">
       <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen" />
       <script type="text/javascript" src="js/funcion.js"></script>
+  
+      
+
+
+
   </head>
     <body>
 
@@ -144,13 +149,23 @@ if(isset($_REQUEST['opciones'])){
                         <!-- campo oculto para enviar el id_material -->
                       <input type="hidden" name="disponibilidad" value="<?php echo $mostrar['disponible']; ?>">
                       <input type="hidden" name="material" value="<?php echo $mostrar['id_material']; ?>">
+                      <p>
+                      <p>Fecha de Reserva:
+                     
+                     <input type="date" name="fecha_r" > 
+                     
+    
+
+                    
+
                       <!-- Se comprueba el valor de disponible y se asigna un texto al botón -->
                       <input type="submit" id="reservar" name="reservar" value=<?php
                         if(!$mostrar['disponible']){
                           echo "Reservar";
-                        }else {
+                          } else {
                           echo "Devolver";
                         }
+                       
                         ?>>
                       <a href="#top"><img src="img/top.png" alt="Subir" title="Subir" /></a>
                     </div>

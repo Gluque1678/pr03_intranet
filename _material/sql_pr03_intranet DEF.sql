@@ -1,26 +1,14 @@
--- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
---
--- Servidor: 127.0.0.1
--- Tiempo de generación: 05-11-2015 a las 12:19:51
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
+﻿
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `bd_pr02_intranet`
+-- Base de datos: `bd_pr03_intranet`
 --
-CREATE DATABASE IF NOT EXISTS `bd_pr02_intranet` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `bd_pr02_intranet`;
+CREATE DATABASE IF NOT EXISTS `bd_pr03_intranet` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `bd_pr03_intranet`;
 
 -- --------------------------------------------------------
 

@@ -1,6 +1,6 @@
 <?php
 //conexión con la base de datos
-$conexion = mysqli_connect('localhost','root','','bd_pr02_intranet') or die ('No se ha podido conectar'. mysql_error());
+$conexion = mysqli_connect('localhost','root','','bd_pr03_intranet') or die ('No se ha podido conectar'. mysql_error());
 
 //se comprueba la variable devuelta de validar_usuario.php en caso de login incorrecto
 if(isset($_REQUEST['error'])){
@@ -17,7 +17,7 @@ if(isset($_REQUEST['error'])){
       <meta lang="es">
       <meta charset="utf-8">
       <meta name="author" content="Felipe, Xavi, Germán">
-      <meta name="description" content="Proyecto2_intranet">
+      <meta name="description" content="Proyecto3_intranet">
       <link rel="icon" type="image/png" href="img/icon.png">
       <link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen">
   </head>

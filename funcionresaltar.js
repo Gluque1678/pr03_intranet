@@ -12,3 +12,4 @@ function resalta(elemento) {
 	break;
 	}
 }
+
