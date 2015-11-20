@@ -114,8 +114,8 @@ if(isset($_REQUEST['opciones'])){
       //realizamos la conexión con mysql
       $con = mysqli_connect('localhost', 'root', '', 'bd_pr03_intranet');
 
-      //como la sentencia SIEMPRE va a buscar todos los registros de la tabla producto, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
-      $sql = "SELECT tbl_usuario.*, tbl_reservas.* FROM tbl_usuario, tbl_reservas WHERE tbl_usuario.id_usuario=tbl_reservas.id_usuario";
+      //como la sentencia SIEMPRE va a buscar todos los registros de la tabla usuario, pongo en la variable $sql esa parte de la sentencia que SI o SI, va a contener
+      $sql = "SELECT * FROM tbl_usuario ORDER BY id_usuario ASC";
 
 
 
@@ -139,17 +139,17 @@ if(isset($_REQUEST['opciones'])){
         //recorremos los resultados y los mostramos por pantalla
         //la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
         while ($prod = mysqli_fetch_array($datos)){
-          echo "<td>";
-
-          echo "<a href='ver.php?id=$prod[id_usuario]'>$prod[email]</a>";
-          echo "</td><td>" . substr($prod['password'], 0, 25) . "</td>";
-
           
+          
+         echo "<td>";
+
+          echo "<a href='administradorver.php?id=$prod[id_usuario]'>$prod[email]</a>";
+          echo "</td><td>" . substr($prod['password'], 0, 25) . "</td><td>$prod[rol]</td><td>$prod[usuario_actiu]</td><td>";
           
           //enlace a la página que modifica el producto pasándole la id (clave primaria)
           if($prod['usuario_actiu']==1){
             
-            echo  "</td><td><a href='administradormodificar.php?id=".$prod['id_usuario']."'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
+            echo  "<a href='administradormodificar.php?id=$prod[id_usuario]'><i class='fa fa-pencil fa-2x fa-pull-left fa-border' title='modificar'></i></a>";
           }
 
 

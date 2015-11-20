@@ -1,15 +1,19 @@
+
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8"/>
-		<title>Ejemplo de formularios con datos en bd_pr03_intranet</title>
+		<title>Ejemplo de formularios con datos en BD</title>
 	</head>
 	<body>
 		<?php
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost', 'root', '', 'bd_pr03_intranet');
-			$sql = "UPDATE tbl_usuario SET email='$_REQUEST[email]', password='$_REQUEST[password]', rol='$_REQUEST[rol]', usuario_actiu='$_REQUEST[usuario_actiu]'' WHERE id_usuario='$_REQUEST[id]'";
+			$sql = "INSERT INTO tbl_usuario (id_usuario, email, password, rol, usuario_actiu) VALUES ($_REQUEST[id_usuario], $_REQUEST[email], $_REQUEST[password], $_REQUEST[rol], $_REQUEST[usuario_actiu])";
+				
 
+					
 			//echo $sql;
 
 			//lanzamos la sentencia sql
@@ -19,8 +23,3 @@
 		?>
 	</body>
 </html>
-
-
-		
-			
-		

@@ -10,7 +10,7 @@
 			$con = mysqli_connect('localhost', 'root', '', 'bd_pr03_intranet');
 
 			//esta consulta devuelve todos los datos del producto cuyo campo clave (pro_id) es igual a la id que nos llega por la barra de direcciones
-			$sql = "SELECT * FROM tbl_usuario WHERE pro_id=$_REQUEST[id]";
+			$sql = "SELECT * FROM tbl_usuario WHERE id_usuario=$_REQUEST[id]";
 
 			//mostramos la consulta para ver por pantalla si es lo que esperábamos o no
 			//echo "$sql<br/>";
@@ -22,8 +22,9 @@
 				<table border>
 					<tr>
 						<th>Altas Usuarios</th>
-						<th>Bajas Usuarios</th>
-						<th>Modificaciones</th>
+						<th>Contraseña Usuarios</th>
+						<th>Rol Usuarios</th>
+						<th>Usuario activo</th>
 					</tr>
 
 					<?php
@@ -31,21 +32,27 @@
 					//recorremos los resultados y los mostramos por pantalla
 					//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
 					while ($prod = mysqli_fetch_array($datos)){
-						echo "<tr><td>$prod[pro_nom]</td><td>" . substr($prod['pro_descripcio'], 0, 25) . "</td><td>$prod[pro_preu]€</td></tr>";
+						echo "<tr><td>$prod[email]</td>;
+								<td>$prod[password]</td>;
+								<td>$prod[rol]</td>;
+								<td>$prod[usuario_actiu]</td>;
+								</tr>";
 					}
+					
+
 
 					?>
-
-				</table>
+					</table>
+				
 
 					<?php
 			} else {
-				echo "Producto con id=$_REQUEST[id] no encontrado!";
+				echo "Usuarios con id=$_REQUEST[id] no encontrado!";
 			}
 			//cerramos la conexión con la base de datos
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="index.php">Volver</a>
+		<a href="administrador.php">Volver</a>
 	</body>
 </html>

@@ -25,14 +25,39 @@
 				Nombre de Usuario:<br/>
 				<input type="text" name="Email" size="25" maxlength="25" value="<?php echo $prod['email']; ?>"><br><br/>
 				Contraseña:<br/>
-				<textarea name="password" cols="26" rows="5"><?php echo $prod['password']; ?></textarea><br><br/>
+				<input type"password" size="25" maxlength="25" value="<?php echo $prod['password']; ?>"><br><br/>
 				Rol:<br/>
-				<input type="text" name="Rol" size="25" maxlength="8" value="<?php echo $prod['rol']; ?>"><br/>
+				<input type="text" name="Rol" size="25" maxlength="15" value="<?php echo $prod['rol']; ?>"><br/>
 				<br>
 				<!--Usuario activo-->
 				
 				<input name="" type="checkbox" />Usuario Activo
 				<br></br>
+				<?php
+					//esta consulta devuelve todos los datos del producto cuyo campo clave (pro_id) es igual a la id que nos llega por la barra de direcciones
+					$sql = "SELECT * FROM tbl_usuario ORDER BY email";
+					//lanzamos la sentencia sql que devuelve todos los tipos de producto
+					$tipos = mysqli_query($con, $sql);
+
+					while ($tipo=mysqli_fetch_array($tipos)){
+						echo "<option value='$tipo[id_usuario]'";
+
+						if($tipo['id_usuario']==$prod['id_usuario']){
+							echo " selected";
+						}
+
+						echo ">$tipo[email]";
+						echo ">$tipo[password]";
+						echo ">$tipo[rol]";
+						echo ">$tipo[usuario_actiu]</option>";
+						
+					}
+					
+						
+					
+
+				?>
+				</select><br/><br/>
 				<input type="submit" value="Guardar">
 				</form>
 				<?php
@@ -46,3 +71,22 @@
 		<a href="administrador.php">Volver</a>
 	</body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -33,7 +33,7 @@
 			}
 						
 			if(mysqli_affected_rows($con)==1){
-				header("location:index.php");
+				header("location:administrador.php");
 				//echo "Producto con id=$_REQUEST[id] eliminado!";
 			} elseif(mysqli_affected_rows($con)==0){
 				echo "No se ha modificado ningún usuario por que no existe en la BD";
@@ -45,6 +45,6 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="index.php">Volver</a>
+		<a href="administrador.php">Volver</a>
 	</body>
 </html>

@@ -7,10 +7,10 @@
 	<body>
 		<?php
 			//realizamos la conexión con mysql
-			$con = mysqli_connect('localhost', 'root', '', 'BD_exemple');
+			$con = mysqli_connect('localhost', 'root', '', 'bd_pr03_intranet');
 
 			//esta consulta devuelve todos los datos del producto cuyo campo clave (pro_id) es igual a la id que nos llega por la barra de direcciones
-			$sql = "SELECT * FROM producto WHERE pro_id=$_REQUEST[id]";
+			$sql = "SELECT * FROM tbl_usuario WHERE id_usuario=$_REQUEST[id]";
 
 			//mostramos la consulta para ver por pantalla si es lo que esperábamos o no
 			//echo "$sql<br/>";
@@ -21,9 +21,13 @@
 				?>
 				<table border>
 					<tr>
-						<th>Nom</th>
-						<th>Descripció</th>
-						<th>Preu</th>
+						
+						<th>Altas Usuarios</th>
+						<th>Contraseña Usuarios</th>
+						<th>Rol Usuarios</th>
+						<th>Usuario activo</th>
+					
+						
 					</tr>
 
 					<?php
@@ -31,23 +35,30 @@
 					//recorremos los resultados y los mostramos por pantalla
 					//la función substr devuelve parte de una cadena. A partir del segundo parámetro (aquí 0) devuelve tantos carácteres como el tercer parámetro (aquí 25)
 					$prod = mysqli_fetch_array($datos);
-					echo "<tr><td>$prod[pro_nom]</td><td>" . substr($prod['pro_descripcio'], 0, 25) . "</td><td>$prod[pro_preu]€</td></tr>";
+					echo "<tr>
+								<td>$prod[email]</td>
+								<td>$prod[password]</td>
+								<td>$prod[rol]</td>
+								<td>$prod[password]</td>
+
+
+								</tr>";
 
 					?>
 					<tr>
 					<td>Eliminar?</td>
 					<td>
 					<?php
-					echo "<a href='eliminar.proc.php?id=$prod[pro_id]'>Si</a>";
+					echo "<a href='administradoreliminarproc.php?id=$prod[id_usuario]'>Si</a>";
 					?>
 					</td>
-					<td><a href="index.php">No</td>
+					<td><a href="administrador.php">No</td>
 					</tr>
 				</table>
 
 					<?php
 			} else {
-				echo "Producto con id=$_REQUEST[id] no encontrado!";
+				echo "Usuario con id=$_REQUEST[id] no encontrado!";
 			}
 			//cerramos la conexión con la base de datos
 			mysqli_close($con);

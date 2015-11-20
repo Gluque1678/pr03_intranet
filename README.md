@@ -36,3 +36,4 @@ página de los usuarios.
 Miercoles 18 estoy resolviendo problemas en la gestion de los usuarios y realizando consultas en la base
 de datos para que me devuelva algunos datos.
 
+Jueves 19 consigo resolver algunos problemas usuarios ya me falta poco para acabarlos.
