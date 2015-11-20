@@ -23,15 +23,15 @@
 				<form name="formulario1" action="administradormodificar.proc.php" method="get">
 				<input type="hidden" name="id" value="<?php echo $prod['id_usuario']; ?>">
 				Nombre de Usuario:<br/>
-				<input type="text" name="Email" size="25" maxlength="25" value="<?php echo $prod['email']; ?>"><br><br/>
+				<input type="text" name="email" size="25" maxlength="25" value="<?php echo $prod['email']; ?>"><br><br/>
 				Contraseña:<br/>
-				<input type"password" size="25" maxlength="25" value="<?php echo $prod['password']; ?>"><br><br/>
+				<input type="text" name="password" size="25" maxlength="25" value="<?php echo $prod['password']; ?>"><br><br/>
 				Rol:<br/>
-				<input type="text" name="Rol" size="25" maxlength="15" value="<?php echo $prod['rol']; ?>"><br/>
+				<input type="text" name="rol" size="25" maxlength="15" value="<?php echo $prod['rol']; ?>"><br/>
 				<br>
 				<!--Usuario activo-->
 				
-				<input name="" type="checkbox" />Usuario Activo
+				<input  name= "usuario_actiu" type="checkbox" />Usuario Activo
 				<br></br>
 				<?php
 					//esta consulta devuelve todos los datos del producto cuyo campo clave (pro_id) es igual a la id que nos llega por la barra de direcciones
@@ -53,7 +53,6 @@
 						
 					}
 					
-						
 					
 
 				?>
@@ -68,7 +67,7 @@
 			mysqli_close($con);
 		?>
 		<br/><br/>
-		<a href="administrador.php">Volver</a>
+		<a href="administrador.php">Volver</a> 
 	</body>
 </html>
 

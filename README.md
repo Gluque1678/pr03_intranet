@@ -3,13 +3,15 @@
 GitHub: https://github.com/figlesiasma/pr02_intranet
 
 Proyecto02: INTRANET http://oxfordintranet.3eeweb.com/
+Proyecto03: INTRANET subido en hostinger oxfordintranet.hol.es
+Usuario hostinger: Email: fasion4@hotmail.com 
 
 USUARIOS		PASSWORD
 
 1010.joan23@fje.edu	1234
-2020.joan23@fje.edu	1234
-3030.joan23@fje.edu	1234
-4040.joan23@fje.edu	1234
+7060.joan23@fje.edu	1234
+32060.joan23@fje.edu	1234
+6060.joan23@fje.edu	1234
 5050.joan23@fje.edu	1234
 6060.joan23@fje.edu	1234
 7070.joan23@fje.edu	1234
@@ -37,3 +39,6 @@ Miercoles 18 estoy resolviendo problemas en la gestion de los usuarios y realiza
 de datos para que me devuelva algunos datos.
 
 Jueves 19 consigo resolver algunos problemas usuarios ya me falta poco para acabarlos.
+
+
+ UPDATE tbl_usuario SET email='1111.joan23@fje.edu', password=1234, rol='usuario', usuario_actiu=1 WHERE id_usuario=1

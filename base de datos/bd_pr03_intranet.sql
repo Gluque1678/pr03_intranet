@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2015 a las 22:34:03
+-- Tiempo de generación: 20-11-2015 a las 03:40:16
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -120,9 +120,15 @@ CREATE TABLE IF NOT EXISTS `tbl_reservas` (
 --
 
 INSERT INTO `tbl_reservas` (`id_reserva`, `id_usuario`, `fecha_entrada`, `fecha_salida`, `id_material`, `id_hora`) VALUES
+(22, 5, '2015-11-05', '2015-11-16', 1, 1),
+(23, 2, '2015-11-16', '2015-11-16', 1, 2),
 (24, 8, '2015-11-16', NULL, 2, 0),
+(25, 11, '2015-11-16', '2015-11-16', 1, 0),
 (26, 10, '2015-11-16', '2015-11-16', 1, 0),
-(29, 7, '2015-11-16', '2015-11-16', 1, 0);
+(27, 3, '2015-11-16', '2015-11-16', 1, 0),
+(28, 11, '2015-11-16', '2015-11-16', 1, 0),
+(29, 7, '2015-11-16', '2015-11-16', 1, 0),
+(30, 11, '2015-11-16', NULL, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -155,20 +161,22 @@ CREATE TABLE IF NOT EXISTS `tbl_usuario` (
   `password` text COLLATE utf8_bin NOT NULL,
   `rol` text COLLATE utf8_bin NOT NULL,
   `usuario_actiu` int(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `tbl_usuario`
 --
 
 INSERT INTO `tbl_usuario` (`id_usuario`, `email`, `password`, `rol`, `usuario_actiu`) VALUES
-(1, 'administrador@administrador', 'adm', 'administrador', 1),
-(2, '2060.joan23@fje.edu', '1234', 'usuario', 1),
-(4, '32060.joan23@fje.edu', '1234', 'usuario', 1),
+(2, '2020.joan23@fje.edu', '1234', 'usuario\r\n', 1),
+(3, '3030.joan23@fje.edu', '1234', 'usuario', 1),
+(4, '4040.joan23@fje.edu', '1234', 'usuario', 1),
+(5, '5050.joan23@fje.edu', '1234', 'usuario', 1),
 (6, '6060.joan23@fje.edu', '1234', 'usuario', 1),
 (7, '7070.joan23@fje.edu', '1234', 'usuario', 1),
 (8, '8080.joan23@fje.edu', '1234', 'usuario', 1),
-(10, '1111.joan23@fje.edu', '1234', 'usuario', 1);
+(10, '1111.joan23@fje.edu', '1234', 'usuario', 1),
+(11, 'administrador@administrador', 'adm', 'administrador', 1);
 
 --
 -- Índices para tablas volcadas
@@ -243,7 +251,7 @@ ALTER TABLE `tbl_tipo_material`
 -- AUTO_INCREMENT de la tabla `tbl_usuario`
 --
 ALTER TABLE `tbl_usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- Restricciones para tablas volcadas
 --

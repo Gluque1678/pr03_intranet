@@ -8,9 +8,9 @@
 		<?php
 			//realizamos la conexión con mysql
 			$con = mysqli_connect('localhost', 'root', '', 'bd_pr03_intranet');
-			$sql = "UPDATE tbl_usuario SET email='$_REQUEST[email]', password='$_REQUEST[password]', rol='$_REQUEST[rol]', usuario_actiu='$_REQUEST[usuario_actiu]'' WHERE id_usuario='$_REQUEST[id]'";
+			$sql = "UPDATE tbl_usuario SET email='$_REQUEST[email]', password='$_REQUEST[password]', rol='$_REQUEST[rol]', usuario_actiu=$_REQUEST[usuario_actiu]  WHERE id_usuario=$_REQUEST[id]";
 
-			//echo $sql;
+			//echo "consulta resultante=".$sql;
 
 			//lanzamos la sentencia sql
 			$datos = mysqli_query($con, $sql);
@@ -22,5 +22,5 @@
 
 
 		
-			
+	
 		
